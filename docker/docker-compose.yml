@@ -1,0 +1,16 @@
+version: '3'
+services:
+  aamlp:
+    container_name: aamlp
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    image: aamlp:sutra
+    volumes:
+      - '../:/aamlp'
+    ports:
+      - "8899:8899"
+      - "6006:6006"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    tty: true

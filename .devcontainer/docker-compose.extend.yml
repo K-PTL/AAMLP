@@ -1,0 +1,10 @@
+version: "3"
+services:
+  aamlp:
+    environment:
+      - HOME=/aamlp
+    working_dir: /aamlp
+    volumes:
+      - ~/.gitconfig:/aamlp/.gitconfig
+      - ~/.ssh:/aamlp/.ssh
+    command: jupyter lab --NotebookApp.token='' --notebook-dir=/aamlp/ --ip=0.0.0.0 --port=8899 --no-browser --allow-root
